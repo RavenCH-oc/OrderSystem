@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>商品管理</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📦 商品管理</h1>
+    <nav>
+      <a href="index.html">商品</a>
+      <a href="order.html">訂單</a>
+      <a href="product.html" class="active">商品管理</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2 id="form-title">新增商品</h2>
+
+      <div class="form-row">
+        <label>商品名稱</label>
+        <input id="f-name" type="text" placeholder="例如：高麗菜">
+      </div>
+
+      <div class="form-row">
+        <label>單價</label>
+        <input id="f-price" type="number" step="0.01" min="0" placeholder="0">
+      </div>
+
+      <div class="form-row">
+        <label>庫存</label>
+        <input id="f-stock" type="number" step="0.01" min="0" placeholder="0" value="0">
+      </div>
+
+      <div class="form-row">
+        <label>商品圖片</label>
+        <input id="f-img-file" type="file" accept="image/*">
+        <img id="f-img-preview" class="img-preview" style="display:none;">
+        <button id="btn-clear-img" class="small danger" style="display:none;">清除圖片</button>
+      </div>
+
+      <div class="form-actions">
+        <button id="btn-save" class="primary">新增</button>
+        <button id="btn-cancel" style="display:none;">取消編輯</button>
+        <span id="form-msg" class="msg"></span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>商品列表</h2>
+      <div class="toolbar">
+        <button id="btn-reload">重新載入</button>
+      </div>
+      <div id="product-list" class="product-grid">
+      </div>
+      <p id="empty-msg" class="empty" style="display:none;">目前沒有商品</p>
+    </section>
+  </main>
+
+  <script src="/eel.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

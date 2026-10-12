@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>訂單</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📦 訂單系統</h1>
+    <nav>
+      <a href="index.html">商品</a>
+      <a href="order.html" class="active">訂單</a>
+      <a href="product.html">商品管理</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>新增訂單</h2>
+
+      <div class="form-row">
+        <label>客戶名稱</label>
+        <input id="customer" type="text" placeholder="例如：小明">
+      </div>
+
+      <div class="form-row">
+        <label>選擇商品</label>
+        <select id="product-select">
+          <option value="">-- 請選擇 --</option>
+        </select>
+        <input id="qty" type="number" step="0.01" min="0.01"
+               placeholder="數量" value="1">
+        <button id="btn-add-item">加入</button>
+      </div>
+
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>單價</th>
+            <th>數量</th>
+            <th>小計</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cart-body">
+          <tr><td colspan="5" class="empty-row">尚未加入商品</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cart-total">
+        總計：<span id="cart-total">$0</span>
+      </div>
+
+      <button id="btn-submit" class="primary">送出訂單</button>
+      <span id="order-msg" class="msg"></span>
+    </section>
+
+    <section class="panel">
+      <h2>訂單列表</h2>
+
+      <div class="toolbar">
+        <label><input type="checkbox" id="chk-picked"> 顯示已取貨</label>
+        <label><input type="checkbox" id="chk-canceled"> 顯示已取消</label>
+        <button id="btn-reload-orders">重新載入</button>
+      </div>
+
+      <div id="order-list">
+      </div>
+    </section>
+  </main>
+
+  <script src="/eel.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>
