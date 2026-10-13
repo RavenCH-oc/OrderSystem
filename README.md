@@ -45,16 +45,18 @@
       資料表外鍵	              建立訂單、商品及訂單明細的關聯
 
 
-pip install -r requirements.txt
+啟用注意事項：
 
-create.sql創建MySQL資料庫
-
-MySQL 服務必須先啟動。
-
-預設連接 localhost。
-
-資料庫名稱是 OrderSystem。
-
-資料庫使用者名稱是 order，需要自行建立及授權。
-
-密碼使用環境變數 ORDER_DB_PW，不放在原始碼中。
+    pip install -r requirements.txt
+        
+    create.sql創建MySQL資料庫
+        
+    MySQL 服務必須先啟動。
+        
+    預設連接 localhost。
+        
+    資料庫名稱是 OrderSystem。
+        
+    資料庫使用者名稱是 order，需要自行建立及授權。
+        
+    密碼使用環境變數 ORDER_DB_PW，不放在原始碼中。
